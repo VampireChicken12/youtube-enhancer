@@ -264,14 +264,14 @@
 				},
 				"enable": {
 					"label": "音量ブースト",
-					"title": "Enable volume boost"
+					"title": "音量ブーストを可能にする"
 				},
 				"mode": {
 					"select": {
-						"label": "Volume boost mode",
+						"label": "音量ブースト型",
 						"options": {
 							"global": "Global",
-							"perVideo": "Per video"
+							"perVideo": "動画ごと"
 						},
 						"title": "Choose how volume boost is applied. 'Per video' allows enabling boost for each video individually in the feature menu. 'Global' applies boost to all videos when volume boost is enabled."
 					}
