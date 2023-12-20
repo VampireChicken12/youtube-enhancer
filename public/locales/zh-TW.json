@@ -259,21 +259,21 @@
 			},
 			"volumeBoost": {
 				"boostAmount": {
-					"label": "Volume boost amount (dB)",
-					"title": "The amount to boost the volume by"
+					"label": "音量增強度 (分貝)",
+					"title": "將音量增幅至"
 				},
 				"enable": {
 					"label": "音量增強",
-					"title": "Enable volume boost"
+					"title": "啟用音量增強"
 				},
 				"mode": {
 					"select": {
-						"label": "Volume boost mode",
+						"label": "音量增強模式",
 						"options": {
-							"global": "Global",
-							"perVideo": "Per video"
+							"global": "全局",
+							"perVideo": "單獨"
 						},
-						"title": "Choose how volume boost is applied. 'Per video' allows enabling boost for each video individually in the feature menu. 'Global' applies boost to all videos when volume boost is enabled."
+						"title": "選擇音量增強如何應用到影片。「單獨」能使用選單為該影片開啟音量增強。「全局」在啟用音量增強時會應用到所影片。"
 					}
 				},
 				"title": "音量增強設定"
