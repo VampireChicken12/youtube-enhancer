@@ -259,18 +259,18 @@
 			},
 			"volumeBoost": {
 				"boostAmount": {
-					"label": "Volume boost amount (dB)",
-					"title": "The amount to boost the volume by"
+					"label": "Значение увеличения громкости (дБ)",
+					"title": "Значение, на которое будет увеличена громкость"
 				},
 				"enable": {
 					"label": "Включить усиление громкости",
-					"title": "Enable volume boost"
+					"title": "Включить усиление громкости"
 				},
 				"mode": {
 					"select": {
-						"label": "Volume boost mode",
+						"label": "Режим увеличения громкости",
 						"options": {
-							"global": "Global",
+							"global": "Глобально",
 							"perVideo": "Per video"
 						},
 						"title": "Choose how volume boost is applied. 'Per video' allows enabling boost for each video individually in the feature menu. 'Global' applies boost to all videos when volume boost is enabled."
