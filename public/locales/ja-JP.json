@@ -259,8 +259,8 @@
 			},
 			"volumeBoost": {
 				"boostAmount": {
-					"label": "Volume boost amount (dB)",
-					"title": "The amount to boost the volume by"
+					"label": "音量ブーストの量(dB)",
+					"title": "音量を上げる量"
 				},
 				"enable": {
 					"label": "音量ブースト",
@@ -270,10 +270,10 @@
 					"select": {
 						"label": "音量ブースト型",
 						"options": {
-							"global": "Global",
+							"global": "全て",
 							"perVideo": "動画ごと"
 						},
-						"title": "Choose how volume boost is applied. 'Per video' allows enabling boost for each video individually in the feature menu. 'Global' applies boost to all videos when volume boost is enabled."
+						"title": "音量ブーストの適用方法を選択します。「動画ごと」は別々の動画ごとを音量ブーストに可能する。「全て」は全ての動画を音量ブーストに付ける。"
 					}
 				},
 				"title": "音量ブーストの設定"
