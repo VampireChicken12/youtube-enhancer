@@ -271,9 +271,9 @@
 						"label": "Режим увеличения громкости",
 						"options": {
 							"global": "Глобально",
-							"perVideo": "Per video"
+							"perVideo": "Для видео"
 						},
-						"title": "Choose how volume boost is applied. 'Per video' allows enabling boost for each video individually in the feature menu. 'Global' applies boost to all videos when volume boost is enabled."
+						"title": "Выберите, каким образом должно применяться усиление громкости. 'Для видео' позволяет включать усиление для каждого видео отдельно в меню функций. 'Глобально' применяет усиление для всех просматриваемых видео когда усиление громкости включено."
 					}
 				},
 				"title": "Настройки усиления громкости"
