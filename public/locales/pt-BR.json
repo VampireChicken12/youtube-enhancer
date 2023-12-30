@@ -2,8 +2,8 @@
 	"langCode": "pt-BR",
 	"langName": "Português do Brasil",
 	"messages": {
-		"resumingVideo": "Resuming video at {{VIDEO_TIME}}",
-		"settingVolume": "Setting volume boost to {{VOLUME_BOOST_AMOUNT}}"
+		"resumingVideo": "Retomando vídeo em {{VIDEO_TIME}}",
+		"settingVolume": "Definindo o ganho de volume para {{VOLUME_BOOST_AMOUNT}}"
 	},
 	"pages": {
 		"content": {
@@ -56,20 +56,20 @@
 	},
 	"settings": {
 		"clearData": {
-			"allDataDeleted": "All data has been deleted.",
-			"confirmAlert": "This will delete all extension data related to options. Continue?"
+			"allDataDeleted": "Todos os dados foram excluídos.",
+			"confirmAlert": "Isto irá apagar todos os dados da extensão relacionados às opções. Continuar?"
 		},
 		"sections": {
 			"automaticQuality": {
 				"enable": {
-					"label": "Automatic quality adjustment",
-					"title": "Automatically adjusts the video quality to the selected level."
+					"label": "Ajuste automático de qualidade",
+					"title": "Ajusta automaticamente a qualidade do vídeo para o nível selecionado."
 				},
 				"select": {
-					"label": "Player quality",
-					"title": "The quality to set the video to"
+					"label": "Qualidade do reprodutor",
+					"title": "A qualidade a ser definida para o vídeo"
 				},
-				"title": "Automatic quality settings"
+				"title": "Configurações de qualidade automáticas"
 			},
 			"bottomButtons": {
 				"clear": {
