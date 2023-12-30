@@ -143,6 +143,10 @@
 						"label": "Botón \"Abrir transcripción\"",
 						"title": "Añade un botón al menú para abrir la transcripción del video que estás viendo"
 					},
+					"openYouTubeSettingsOnHover": {
+						"label": "Open YouTube settings on hover",
+						"title": "Opens the YouTube settings menu when you hover over the settings button"
+					},
 					"remainingTime": {
 						"label": "Tiempo restante",
 						"title": "Muestra el tiempo restante del vídeo que estás viendo"
