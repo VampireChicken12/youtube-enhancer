@@ -93,7 +93,7 @@
 							"click": "Click",
 							"hover": "Pasar el cursor por encima"
 						},
-						"title": "Select the method to activate the feature menu"
+						"title": "Selecciona el método para abrir el menú"
 					},
 					"title": "Configuración del menú"
 				}
@@ -144,8 +144,8 @@
 						"title": "Añade un botón al menú para abrir la transcripción del video que estás viendo"
 					},
 					"openYouTubeSettingsOnHover": {
-						"label": "Open YouTube settings on hover",
-						"title": "Opens the YouTube settings menu when you hover over the settings button"
+						"label": "Abrir ajustes de YouTube al pasar el cursor",
+						"title": "Abre el menú de configuración de YouTube cuando pasa el cursor por encima del botón de ajustes"
 					},
 					"remainingTime": {
 						"label": "Tiempo restante",
@@ -190,7 +190,7 @@
 					"title": "Adjust the spacing around the On-Screen Display in pixels. This applies specifically to corner On-Screen Display."
 				},
 				"position": {
-					"label": "Position",
+					"label": "Posición",
 					"options": {
 						"bottom_left": "Parte inferior izquierda",
 						"bottom_right": "Parte inferior derecha",
@@ -249,11 +249,11 @@
 				},
 				"enable": {
 					"label": "Control de velocidad con la rueda",
-					"title": "Press a modifier key to enable speed adjustment with the scroll wheel."
+					"title": "Pulsa una tecla para activar el ajuste de velocidad con la rueda del ratón."
 				},
-				"optionLabel": "{{KEY}} key",
+				"optionLabel": "Tecla {{KEY}}",
 				"select": {
-					"label": "Modifier key",
+					"label": "Tecla modificadora",
 					"title": "The modifier key to use"
 				},
 				"title": "Scroll wheel speed control settings"
