@@ -12,7 +12,7 @@
 					"label": "Feature menu"
 				},
 				"loopButton": {
-					"label": "Loop"
+					"label": "Boucle"
 				},
 				"maximizePlayerButton": {
 					"label": "Maximize"
@@ -22,16 +22,16 @@
 				},
 				"screenshotButton": {
 					"copiedToClipboard": "Screenshot copied to clipboard",
-					"label": "Screenshot"
+					"label": "Capture d'écran"
 				},
 				"videoHistory": {
-					"resumeButton": "Resume",
+					"resumeButton": "Reprendre",
 					"resumePrompt": {
-						"close": "Close"
+						"close": "Fermer"
 					}
 				},
 				"volumeBoostButton": {
-					"label": "Volume Boost"
+					"label": "Gain sonore"
 				}
 			}
 		},
@@ -49,14 +49,14 @@
 					"reset": "All options have been reset to their default values.\nYou can now save the changes by clicking the \"Confirm\" button or discard them by closing this page or ignore this notification."
 				},
 				"success": {
-					"saved": "Options saved."
+					"saved": "Options enregistrées."
 				}
 			}
 		}
 	},
 	"settings": {
 		"clearData": {
-			"allDataDeleted": "All data has been deleted.",
+			"allDataDeleted": "Toutes les données ont été supprimées.",
 			"confirmAlert": "This will delete all extension data related to options. Continue?"
 		},
 		"sections": {
@@ -66,74 +66,74 @@
 					"title": "Automatically adjusts the video quality to the selected level."
 				},
 				"select": {
-					"label": "Player quality",
-					"title": "The quality to set the video to"
+					"label": "Résolution",
+					"title": "La vidéo aura cette résolution"
 				},
-				"title": "Automatic quality settings"
+				"title": "Paramètres de qualité automatique"
 			},
 			"bottomButtons": {
 				"clear": {
-					"title": "Clears all data this extension has stored on your machine",
-					"value": "Clear Data"
+					"title": "Efface toutes les données stockées par cette extension sur votre ordinateur",
+					"value": "Effacer les données"
 				},
 				"confirm": {
-					"title": "Confirm setting reset",
-					"value": "Confirm"
+					"title": "Confirmer la réinitialisation des réglages",
+					"value": "Confirmer"
 				},
 				"reset": {
-					"title": "Resets all settings to their defaults, Click the confirm button to save the changes",
-					"value": "Reset"
+					"title": "Réinitialise tous les paramètres par défaut, cliquez sur le bouton de confirmation pour enregistrer les modifications",
+					"value": "Réinitialiser"
 				}
 			},
 			"featureMenu": {
 				"openType": {
 					"select": {
-						"label": "Menu Activation Type",
+						"label": "Action d'activation du menu",
 						"options": {
-							"click": "Click",
-							"hover": "Hover"
+							"click": "Clic",
+							"hover": "Survol"
 						},
-						"title": "Select the method to activate the feature menu"
+						"title": "Sélectionnez la méthode pour activer le menu de fonctionnalités"
 					},
-					"title": "Feature menu settings"
+					"title": "Paramètres du menu de fonctionnalités"
 				}
 			},
 			"importExportSettings": {
 				"exportButton": {
-					"success": "Settings successfully exported",
-					"title": "Export settings to a JSON file",
-					"value": "Export Settings"
+					"success": "Réglages exportés avec succès",
+					"title": "Exporter les paramètres vers un fichier JSON",
+					"value": "Exporter les paramètres"
 				},
 				"importButton": {
 					"error": {
-						"unknown": "Error importing settings. Please check the file format.\nAn unknown error occurred.",
-						"validation": "Error importing settings. Please check the file format.\n{{ERROR_MESSAGE}}"
+						"unknown": "Erreur lors de l'importation des paramètres. Veuillez vérifier le format du fichier.\nUne erreur inconnue s'est produite.",
+						"validation": "Erreur lors de l'importation des paramètres. Veuillez vérifier le format du fichier.\n{{ERROR_MESSAGE}}"
 					},
-					"success": "Settings imported successfully",
-					"title": "Import settings from a JSON file",
-					"value": "Import Settings"
+					"success": "Paramètres importés avec succès",
+					"title": "Importer les paramètres depuis un fichier JSON",
+					"value": "Importer les paramètres"
 				}
 			},
 			"language": {
 				"select": {
-					"label": "Language",
-					"title": "The language to use for the extension"
+					"label": "Langue",
+					"title": "La langue à utiliser pour l'extension"
 				},
-				"title": "Language"
+				"title": "Langue"
 			},
 			"miscellaneous": {
 				"features": {
 					"automaticTheaterMode": {
-						"label": "Automatic theater mode",
-						"title": "Automatically enables theater mode when you load a video"
+						"label": "Mode cinéma automatique",
+						"title": "Activer automatiquement le mode cinéma lorsque vous chargez une vidéo"
 					},
 					"hideScrollbar": {
-						"label": "Hide scrollbar",
-						"title": "Hides the pages scrollbar"
+						"label": "Cacher la barre de défilement",
+						"title": "Cache la barre de défilement des pages"
 					},
 					"loopButton": {
-						"label": "Loop button",
-						"title": "Adds a button to the feature menu to loop the video you're watching"
+						"label": "Bouton de boucle",
+						"title": "Ajoute un bouton au menu de fonctionnalité pour regarder la vidéo en boucle"
 					},
 					"maximizePlayerButton": {
 						"label": "Maximize player button",
@@ -204,67 +204,67 @@
 				"type": {
 					"label": "Type",
 					"options": {
-						"line": "Line",
-						"no_display": "No display",
-						"round": "Round",
-						"text": "Text"
+						"line": "Ligne",
+						"no_display": "Cacher",
+						"round": "Arrondi",
+						"text": "Texte"
 					},
-					"title": "Select the type of On-Screen Display"
+					"title": "Sélectionnez le type d'affichage à l'écran"
 				}
 			},
 			"playbackSpeed": {
 				"enable": {
-					"label": "Forced playback speed",
-					"title": "Sets the video speed to what you choose below"
+					"label": "Vitesse de lecture forcée",
+					"title": "Définit la vitesse de la vidéo comme choisie ci-dessous"
 				},
 				"select": {
-					"label": "Player speed",
-					"title": "The speed to set the video to"
+					"label": "Vitesse de la vidéo",
+					"title": "La vitesse à laquelle la vidéo est définie"
 				},
-				"title": "Playback speed settings"
+				"title": "Réglages de vitesse de lecture"
 			},
 			"screenshotButton": {
 				"enable": {
-					"label": "Screenshot button",
-					"title": "Adds a button to the player to take a screenshot of the video"
+					"label": "Bouton de capture d'écran",
+					"title": "Ajoute un bouton au lecteur pour prendre une capture d'écran de la vidéo"
 				},
 				"saveAs": {
-					"clipboard": "Clipboard",
-					"file": "File"
+					"clipboard": "Presse-papiers",
+					"file": "Fichier"
 				},
 				"selectFormat": {
-					"label": "Screenshot format",
-					"title": "The format to save the screenshot in"
+					"label": "Format de la capture d'écran",
+					"title": "Le format dans lequel enregistrer la capture d'écran"
 				},
 				"selectSaveAs": {
-					"label": "Screenshot save type",
-					"title": "The screenshot save type"
+					"label": "Type de sauvegarde de la capture d'écran",
+					"title": "Le type de sauvegarde de la capture d'écran"
 				},
-				"title": "Screenshot settings"
+				"title": "Paramètres de capture d’écran"
 			},
 			"scrollWheelSpeedControl": {
 				"adjustmentSteps": {
-					"label": "Speed Change Per Scroll",
-					"title": "Adjust the speed change per scroll"
+					"label": "Vitesse de défilement",
+					"title": "Ajuste la vitesse de défilement"
 				},
 				"enable": {
-					"label": "Scroll wheel speed control",
-					"title": "Press a modifier key to enable speed adjustment with the scroll wheel."
+					"label": "Contrôle de la vitesse de défilement",
+					"title": "Appuyez sur la touche de modification pour activer le réglage de la vitesse de défilement de la molette."
 				},
-				"optionLabel": "{{KEY}} key",
+				"optionLabel": "touche {{KEY}}",
 				"select": {
-					"label": "Modifier key",
-					"title": "The modifier key to use"
+					"label": "Touche de modification",
+					"title": "La touche de modification à utiliser"
 				},
-				"title": "Scroll wheel speed control settings"
+				"title": "Paramètres de contrôle de la vitesse de défilement"
 			},
 			"scrollWheelVolumeControl": {
 				"adjustmentSteps": {
-					"label": "Volume Change Per Scroll",
-					"title": "Adjust the volume change per scroll"
+					"label": "Pas de volume par défilement",
+					"title": "Ajuster le changement de volume par défilement"
 				},
 				"enable": {
-					"label": "Scroll wheel volume control",
+					"label": "Contrôle du volume avec roulette",
 					"title": "Lets you use the scroll wheel to control the volume of the video you're watching"
 				},
 				"holdModifierKey": {
