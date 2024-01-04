@@ -144,8 +144,8 @@
 						"title": "Добавляет кнопку в меню функций, чтобы открыть стенограмму видео, которое вы просматриваете"
 					},
 					"openYouTubeSettingsOnHover": {
-						"label": "Open YouTube settings on hover",
-						"title": "Opens the YouTube settings menu when you hover over the settings button"
+						"label": "Открывать настройки YouTube при наведении курсора",
+						"title": "Открывает меню настроек YouTube при наведении на кнопку меню"
 					},
 					"remainingTime": {
 						"label": "Включить отображение оставшегося времени",
