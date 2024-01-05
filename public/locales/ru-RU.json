@@ -89,7 +89,7 @@
 				"editor": {
 					"collapse": "Свернуть редактор",
 					"expand": "Расширить редактор",
-					"noProblems": "No problems found."
+					"noProblems": "Проблем не найдено."
 				},
 				"enable": {
 					"label": "Включить пользовательский CSS",
