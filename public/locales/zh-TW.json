@@ -89,7 +89,7 @@
 				"editor": {
 					"collapse": "收起編輯器",
 					"expand": "展開編輯器",
-					"noProblems": "No problems found."
+					"noProblems": "沒有發現問題"
 				},
 				"enable": {
 					"label": "啟用自訂CSS",
