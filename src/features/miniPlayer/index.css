@@ -1,0 +1,13 @@
+.yte-mini-player {
+	position: fixed !important;
+	top: 0px !important;
+	left: 0px !important;
+	background-color: black !important;
+	will-change: transform height width !important;
+}
+.yte-mini-player-video {
+	width: 100% !important;
+	height: 100% !important;
+	top: 0px !important;
+	left: 0px !important;
+}

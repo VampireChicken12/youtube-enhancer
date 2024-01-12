@@ -4,6 +4,7 @@ export type FeatureName =
 	| "hideScrollBar"
 	| "loopButton"
 	| "maximizePlayerButton"
+	| "miniPlayer"
 	| "openTranscriptButton"
 	| "openYouTubeSettingsOnHover"
 	| "playerQuality"

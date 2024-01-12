@@ -251,6 +251,11 @@ const storageChangeHandler = async (changes: StorageChanges, areaName: string) =
 				maximizePlayerButtonEnabled: newValue
 			});
 		},
+		enable_mini_player_button: (newValue) => {
+			sendExtensionOnlyMessage("miniPlayerButtonChange", {
+				miniPlayerButtonEnabled: newValue
+			});
+		},
 		enable_open_transcript_button: (__oldValue, newValue) => {
 			sendExtensionOnlyMessage("openTranscriptButtonChange", {
 				openTranscriptButtonEnabled: newValue

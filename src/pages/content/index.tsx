@@ -13,6 +13,7 @@ import { hideScrollBar, showScrollBar } from "@/src/features/hideScrollBar/utils
 import { addLoopButton, removeLoopButton } from "@/src/features/loopButton";
 import { addMaximizePlayerButton, removeMaximizePlayerButton } from "@/src/features/maximizePlayerButton";
 import { maximizePlayer } from "@/src/features/maximizePlayerButton/utils";
+import { addMiniPlayerButton, removeMiniPlayerButton } from "@/src/features/miniPlayer";
 import { openTranscriptButton } from "@/src/features/openTranscriptButton";
 import { removeOpenTranscriptButton } from "@/src/features/openTranscriptButton/utils";
 import { disableOpenYouTubeSettingsOnHover, enableOpenYouTubeSettingsOnHover } from "@/src/features/openYouTubeSettingsOnHover";
@@ -112,6 +113,7 @@ window.addEventListener("DOMContentLoaded", function () {
 				void addScreenshotButton();
 				void enableRememberVolume();
 				void enableCustomCSS();
+				void addMiniPlayerButton();
 				setupPlaybackSpeedChangeListener();
 				void setPlayerQuality();
 				void setPlayerSpeed();
@@ -406,6 +408,17 @@ window.addEventListener("DOMContentLoaded", function () {
 							const { [featureName]: featureFunctions } = featureButtonFunctions;
 							await (featureFunctions as FeatureFuncRecord).remove(oldPlacement);
 							await (featureFunctions as FeatureFuncRecord).add();
+						}
+						break;
+					}
+					case "miniPlayerButtonChange": {
+						const {
+							data: { miniPlayerButtonEnabled }
+						} = message;
+						if (miniPlayerButtonEnabled) {
+							void addMiniPlayerButton();
+						} else {
+							void removeMiniPlayerButton();
 						}
 						break;
 					}

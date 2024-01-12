@@ -846,6 +846,25 @@ export default function Settings() {
 					/>
 				</SettingSection>
 				<SettingSection>
+					<SettingTitle title={t("settings.sections.miniPlayer.title")} />
+					<Setting
+						checked={settings.enable_mini_player_button?.toString() === "true"}
+						id="enable_mini_player_button"
+						label={t("settings.sections.miniPlayer.enableMiniPlayerButton.label")}
+						onChange={setCheckboxOption("enable_mini_player_button")}
+						title={t("settings.sections.miniPlayer.enableMiniPlayerButton.title")}
+						type="checkbox"
+					/>
+					<Setting
+						checked={settings.enable_mini_player_when_scrolling_down?.toString() === "true"}
+						id="enable_mini_player_when_scrolling_down"
+						label={t("settings.sections.miniPlayer.openWhenScrollingDown.label")}
+						onChange={setCheckboxOption("enable_mini_player_when_scrolling_down")}
+						title={t("settings.sections.miniPlayer.openWhenScrollingDown.title")}
+						type="checkbox"
+					/>
+				</SettingSection>
+				<SettingSection>
 					<SettingTitle title={t("settings.sections.screenshotButton.title")} />
 					<Setting
 						checked={settings.enable_screenshot_button?.toString() === "true"}

@@ -3,7 +3,7 @@ import type { ButtonPlacement, FeaturesThatHaveButtons } from "./types";
 import { createSVGElement } from "./utils/utilities";
 export type ToggleIcon = { off: SVGSVGElement; on: SVGSVGElement };
 export type BasicIcon = SVGSVGElement;
-export const toggleFeatures = Object.keys({ loopButton: "", maximizePlayerButton: "", volumeBoostButton: "" } satisfies Partial<
+export const toggleFeatures = Object.keys({ loopButton: "", maximizePlayerButton: "", miniPlayer: "", volumeBoostButton: "" } satisfies Partial<
 	Record<FeaturesThatHaveButtons, "">
 >);
 export type ToggleFeatures = (typeof toggleFeatures)[number];
@@ -195,6 +195,23 @@ const minimizePlayerSVG = createSVGElement(
 		"stroke-width": "1.5"
 	})
 );
+const miniPlayerOffSVG = createSVGElement(
+	"svg",
+	{
+		fill: "none",
+		height: "24px",
+		stroke: "currentColor",
+		"stroke-width": 0,
+		viewBox: "0 0 24 24",
+		width: "24px"
+	},
+	createSVGElement("path", {
+		"clip-rule": "evenodd",
+		d: "M3 6C3 4.34315 4.34315 3 6 3H18C19.6569 3 21 4.34315 21 6V18C21 19.6569 19.6569 21 18 21H6C4.34315 21 3 19.6569 3 18V6ZM6 5H18C18.5523 5 19 5.44772 19 6V12.2676C18.7058 12.0974 18.3643 12 18 12H14C12.8954 12 12 12.8954 12 14V18C12 18.3643 12.0974 18.7058 12.2676 19H6C5.44772 19 5 18.5523 5 18V6C5 5.44772 5.44772 5 6 5Z",
+		fill: "currentColor",
+		"fill-rule": "evenodd"
+	})
+);
 export const featureIcons = {
 	loopButton: {
 		feature_menu: loopOnSVG,
@@ -208,6 +225,13 @@ export const featureIcons = {
 		shared_icon_position: {
 			off: maximizePlayerSVG,
 			on: minimizePlayerSVG
+		}
+	},
+	miniPlayer: {
+		feature_menu: miniPlayerOffSVG,
+		shared_icon_position: {
+			off: miniPlayerOffSVG,
+			on: miniPlayerOffSVG // TODO: replace icon with on icon
 		}
 	},
 	openTranscriptButton: {

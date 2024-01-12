@@ -25,6 +25,13 @@
 						"on": "Maximize on"
 					}
 				},
+				"miniPlayer": {
+					"label": "Mini Player",
+					"toggle": {
+						"off": "Mini Player off",
+						"on": "Mini Player on"
+					}
+				},
 				"openTranscriptButton": {
 					"label": "Open transcript"
 				},
@@ -102,6 +109,7 @@
 					"buttonNames": {
 						"loopButton": "Loop button",
 						"maximizePlayerButton": "Maximize button",
+						"miniPlayer": "Mini Player button",
 						"openTranscriptButton": "Open Transcript button",
 						"screenshotButton": "Screenshot button",
 						"volumeBoostButton": "Volume Boost button"
@@ -175,6 +183,17 @@
 					"title": "The language to use for the extension"
 				},
 				"title": "Language"
+			},
+			"miniPlayer": {
+				"enableMiniPlayerButton": {
+					"label": "Mini player button",
+					"title": "Adds a button to the feature menu to open the video in a mini player"
+				},
+				"openWhenScrollingDown": {
+					"label": "Open mini player when scrolling to comments",
+					"title": "Automatically opens the mini player when you scroll to the comments section"
+				},
+				"title": "Mini player settings"
 			},
 			"miscellaneous": {
 				"features": {

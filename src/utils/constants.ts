@@ -22,6 +22,7 @@ export const defaultConfiguration = {
 	button_placements: {
 		loopButton: "feature_menu",
 		maximizePlayerButton: "feature_menu",
+		miniPlayer: "feature_menu",
 		openTranscriptButton: "feature_menu",
 		screenshotButton: "feature_menu",
 		volumeBoostButton: "feature_menu"
@@ -34,6 +35,8 @@ export const defaultConfiguration = {
 	enable_hide_scrollbar: false,
 	enable_loop_button: false,
 	enable_maximize_player_button: false,
+	enable_mini_player_button: false,
+	enable_mini_player_when_scrolling_down: false,
 	enable_open_transcript_button: false,
 	enable_open_youtube_settings_on_hover: false,
 	enable_remaining_time: false,
@@ -92,6 +95,8 @@ export const configurationImportSchema: TypeToPartialZodSchema<
 	enable_hide_scrollbar: z.boolean().optional(),
 	enable_loop_button: z.boolean().optional(),
 	enable_maximize_player_button: z.boolean().optional(),
+	enable_mini_player_button: z.boolean().optional(),
+	enable_mini_player_when_scrolling_down: z.boolean().optional(),
 	enable_open_transcript_button: z.boolean().optional(),
 	enable_open_youtube_settings_on_hover: z.boolean().optional(),
 	enable_remaining_time: z.boolean().optional(),

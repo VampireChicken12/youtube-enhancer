@@ -2,6 +2,7 @@ import type { ButtonPlacement, FeaturesThatHaveButtons } from "@/src/types";
 
 import { addLoopButton, removeLoopButton } from "@/src/features/loopButton";
 import { addMaximizePlayerButton, removeMaximizePlayerButton } from "@/src/features/maximizePlayerButton";
+import { addMiniPlayerButton, removeMiniPlayerButton } from "@/src/features/miniPlayer";
 import { addOpenTranscriptButton, removeOpenTranscriptButton } from "@/src/features/openTranscriptButton/utils";
 import { addScreenshotButton, removeScreenshotButton } from "@/src/features/screenshotButton";
 import { addVolumeBoostButton, removeVolumeBoostButton } from "@/src/features/volumeBoost";
@@ -19,6 +20,10 @@ export const featureButtonFunctions = {
 	maximizePlayerButton: {
 		add: addMaximizePlayerButton,
 		remove: removeMaximizePlayerButton
+	},
+	miniPlayer: {
+		add: addMiniPlayerButton,
+		remove: removeMiniPlayerButton
 	},
 	openTranscriptButton: {
 		add: addOpenTranscriptButton,

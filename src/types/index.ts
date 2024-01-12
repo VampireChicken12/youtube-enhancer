@@ -54,6 +54,7 @@ export type FeatureButtonId = `yte-feature-${FeatureName}-button`;
 export const featuresThatHaveButtons = Object.keys({
 	loopButton: "",
 	maximizePlayerButton: "",
+	miniPlayer: "",
 	openTranscriptButton: "",
 	screenshotButton: "",
 	volumeBoostButton: ""
@@ -71,6 +72,8 @@ export type configuration = {
 	enable_hide_scrollbar: boolean;
 	enable_loop_button: boolean;
 	enable_maximize_player_button: boolean;
+	enable_mini_player_button: boolean;
+	enable_mini_player_when_scrolling_down: boolean;
 	enable_open_transcript_button: boolean;
 	enable_open_youtube_settings_on_hover: boolean;
 	enable_remaining_time: boolean;
@@ -160,6 +163,7 @@ export type ExtensionSendOnlyMessageMappings = {
 	languageChange: DataResponseMessage<"languageChange", { language: AvailableLocales }>;
 	loopButtonChange: DataResponseMessage<"loopButtonChange", { loopButtonEnabled: boolean }>;
 	maximizeButtonChange: DataResponseMessage<"maximizeButtonChange", { maximizePlayerButtonEnabled: boolean }>;
+	miniPlayerButtonChange: DataResponseMessage<"miniPlayerButtonChange", { miniPlayerButtonEnabled: boolean }>;
 	openTranscriptButtonChange: DataResponseMessage<"openTranscriptButtonChange", { openTranscriptButtonEnabled: boolean }>;
 	openYTSettingsOnHoverChange: DataResponseMessage<
 		"openYTSettingsOnHoverChange",
