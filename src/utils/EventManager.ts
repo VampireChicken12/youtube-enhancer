@@ -2,6 +2,7 @@ export type FeatureName =
 	| "automaticTheaterMode"
 	| "featureMenu"
 	| "hideScrollBar"
+	| "hideShorts"
 	| "loopButton"
 	| "maximizePlayerButton"
 	| "miniPlayer"
@@ -14,6 +15,7 @@ export type FeatureName =
 	| "screenshotButton"
 	| "scrollWheelSpeedControl"
 	| "scrollWheelVolumeControl"
+	| "shortsAutoScroll"
 	| "videoHistory"
 	| "volumeBoostButton";
 type EventCallback<K extends keyof HTMLElementEventMap> = (event: HTMLElementEventMap[K]) => void;
