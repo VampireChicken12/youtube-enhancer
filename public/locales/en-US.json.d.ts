@@ -7,19 +7,19 @@ interface EnUS {
 	};
 	pages: {
 		content: {
-			features: {
+			buttons: {
 				featureMenu: { label: "Feature menu" };
 				loopButton: { label: "Loop"; toggle: { off: "Loop off"; on: "Loop on" } };
 				maximizePlayerButton: { label: "Maximize"; toggle: { off: "Maximize off"; on: "Maximize on" } };
 				miniPlayer: { label: "Mini Player"; toggle: { off: "Mini Player off"; on: "Mini Player on" } };
 				openTranscriptButton: { label: "Open transcript" };
 				screenshotButton: { copiedToClipboard: "Screenshot copied to clipboard"; label: "Screenshot" };
-				videoHistory: { resumeButton: "Resume"; resumePrompt: { close: "Close" } };
 				volumeBoostButton: {
 					label: "Volume Boost";
 					toggle: { off: "Volume boost off"; on: "Volume boost on" };
 				};
 			};
+			features: { videoHistory: { resumeButton: "Resume"; resumePrompt: { close: "Close" } } };
 		};
 		options: {
 			notifications: {
@@ -58,6 +58,7 @@ interface EnUS {
 					value: "Clear Data";
 				};
 				confirm: { title: "Confirm setting reset"; value: "Confirm" };
+				openTab: { title: "Open extension settings in a new tab" };
 				reset: {
 					title: "Resets all settings to their defaults, Click the confirm button to save the changes";
 					value: "Reset";
