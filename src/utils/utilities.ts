@@ -654,8 +654,8 @@ export function getPathValue<T, P extends Path<T>>(obj: T, path: P): PathValue<T
 
 	return value as PathValue<T, P>;
 }
-type ModifyElementAction = "add" | "remove";
-type ElementClassPair = { className: string; selector: string };
+export type ModifyElementAction = "add" | "remove";
+export type ElementClassPair = { className: string; selector: string };
 export function modifyElementClassList(action: ModifyElementAction, elementPair: ElementClassPair) {
 	const { className, selector } = elementPair;
 	const element = document.querySelector<HTMLElement>(selector);
