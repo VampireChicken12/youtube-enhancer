@@ -3,6 +3,7 @@ import type { AddButtonFunction, RemoveButtonFunction } from "@/src/features";
 import { addFeatureButton, removeFeatureButton } from "@/src/features/buttonPlacement";
 import { getFeatureButton } from "@/src/features/buttonPlacement/utils";
 import { getFeatureIcon } from "@/src/icons";
+import { type Nullable } from "@/src/types";
 import eventManager from "@/src/utils/EventManager";
 import { createTooltip, waitForSpecificMessage } from "@/src/utils/utilities";
 
@@ -28,11 +29,7 @@ async function takeScreenshot(videoElement: HTMLVideoElement) {
 				options: { screenshot_format, screenshot_save_as }
 			}
 		} = optionsData;
-		const format = `image/${screenshot_format}`;
-
-		// Get the data URL of the canvas and create a blob from it
-		const dataUrl = canvas.toDataURL(format);
-		const blob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, "image/png"));
+		const blob = await new Promise<Nullable<Blob>>((resolve) => canvas.toBlob(resolve, "image/png"));
 		if (!blob) return;
 
 		switch (screenshot_save_as) {
@@ -49,7 +46,6 @@ async function takeScreenshot(videoElement: HTMLVideoElement) {
 				listener();
 				const clipboardImage = new ClipboardItem({ "image/png": blob });
 				void navigator.clipboard.write([clipboardImage]);
-				void navigator.clipboard.writeText(dataUrl);
 				setTimeout(() => {
 					remove();
 				}, 1200);
@@ -99,7 +95,7 @@ export const addScreenshotButton: AddButtonFunction = async () => {
 	await addFeatureButton(
 		"screenshotButton",
 		screenshotButtonPlacement,
-		window.i18nextInstance.t("pages.content.features.screenshotButton.label"),
+		window.i18nextInstance.t("pages.content.features.screenshotButton.button.label"),
 		getFeatureIcon("screenshotButton", screenshotButtonPlacement !== "feature_menu" ? "shared_icon_position" : "feature_menu"),
 		screenshotButtonClickListener,
 		false

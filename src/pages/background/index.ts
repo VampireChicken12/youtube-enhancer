@@ -1,4 +1,8 @@
-import pkg from "../../../package.json";
+import type { ContentToBackgroundSendOnlyMessageMappings } from "@/src/types";
+
+import { updateStoredSettings } from "@/src/utils/updateStoredSettings";
+
+import { version } from "../../../package.json";
 
 chrome.runtime.onInstalled.addListener((details) => {
 	const { previousVersion, reason } = details;
@@ -10,7 +14,6 @@ chrome.runtime.onInstalled.addListener((details) => {
 			break;
 		}
 		case chrome.runtime.OnInstalledReason.UPDATE: {
-			const { version } = pkg;
 			if (
 				isNewMajorVersion(previousVersion as VersionString, version as VersionString) ||
 				isNewMinorVersion(previousVersion as VersionString, version as VersionString)
@@ -18,6 +21,7 @@ chrome.runtime.onInstalled.addListener((details) => {
 				// Open options page if a new major or minor version is released
 				void chrome.tabs.create({ url: "/src/pages/options/index.html" });
 			}
+			void updateStoredSettings();
 			break;
 		}
 	}
@@ -34,3 +38,52 @@ function isNewMajorVersion(oldVersion: VersionString, newVersion: VersionString)
 	const [newMajorVersion] = newVersion.split(".");
 	return oldMajorVersion !== newMajorVersion;
 }
+chrome.runtime.onMessage.addListener((message: ContentToBackgroundSendOnlyMessageMappings[keyof ContentToBackgroundSendOnlyMessageMappings]) => {
+	switch (message.type) {
+		case "pauseBackgroundPlayers": {
+			// Get the active tab's ID
+			chrome.tabs.query({ active: true, currentWindow: true }, (activeTabs) => {
+				const [activeTab] = activeTabs;
+				const { id: activeTabId } = activeTab;
+				// Query all tabs except the active one
+				chrome.tabs.query({ url: "https://www.youtube.com/*" }, (tabs) => {
+					for (const tab of tabs) {
+						// Skip the active tab
+						if (tab.id === activeTabId) continue;
+						if (tab.id !== undefined) {
+							chrome.scripting.executeScript(
+								{
+									func: () => {
+										const videos = document.querySelectorAll("video");
+										videos.forEach((video) => {
+											if (!video.paused) {
+												video.pause();
+											}
+										});
+										const audios = document.querySelectorAll("audio");
+										audios.forEach((audio) => {
+											if (!audio.paused) {
+												audio.pause();
+											}
+										});
+									},
+									target: { tabId: tab.id }
+								},
+								(results) => {
+									if (chrome.runtime.lastError) {
+										console.error(chrome.runtime.lastError.message);
+									} else {
+										if (results[0].result) {
+											console.log(results);
+										}
+									}
+								}
+							);
+						}
+					}
+				});
+			});
+			break;
+		}
+	}
+});

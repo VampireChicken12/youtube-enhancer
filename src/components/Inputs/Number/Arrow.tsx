@@ -4,6 +4,7 @@ type RotationDirection = "down" | "left" | "right" | "up";
 export default function Arrow({ rotation }: { rotation: RotationDirection }) {
 	return (
 		<svg
+			// eslint-disable-next-line tailwindcss/enforces-shorthand
 			className={cn("h-4 w-4 scale-125 transition-transform duration-300", {
 				"rotate-0": rotation === "down",
 				"rotate-90": rotation === "left",

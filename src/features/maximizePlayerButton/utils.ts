@@ -1,5 +1,6 @@
 import { getFeatureIcon } from "@/src/icons";
 import eventManager from "@/src/utils/EventManager";
+import { type ElementClassPair, type ModifyElementAction, modifyElementClassList, modifyElementsClassList } from "@/src/utils/utilities";
 
 import { getFeatureButton, updateFeatureButtonIcon, updateFeatureButtonTitle } from "../buttonPlacement/utils";
 
@@ -21,18 +22,7 @@ export function updateProgressBarPositions() {
 	hoverProgress.style.left = `${scrubberPosition}px`;
 }
 
-type Action = "add" | "remove";
-type ElementClassPair = { className: string; selector: string };
-function modifyElementClassList(action: Action, elementPair: ElementClassPair) {
-	const { className, selector } = elementPair;
-	const element = document.querySelector<HTMLElement>(selector);
-	if (!element) return;
-	element.classList[action](className);
-}
-function modifyElementsClassList(action: Action, elements: ElementClassPair[]) {
-	elements.forEach((element) => modifyElementClassList(action, element));
-}
-function adjustPlayer(action: Action) {
+function adjustPlayer(action: ModifyElementAction) {
 	const elements: ElementClassPair[] = [
 		{ className: "yte-maximized-video", selector: "video.html5-main-video" },
 		{ className: "yte-maximized-video-container", selector: "div#movie_player" },
@@ -42,7 +32,7 @@ function adjustPlayer(action: Action) {
 	];
 	modifyElementsClassList(action, elements);
 }
-function adjustTooltip(action: Action, element: ElementClassPair) {
+function adjustTooltip(action: ModifyElementAction, element: ElementClassPair) {
 	modifyElementClassList(action, element);
 }
 
@@ -74,7 +64,10 @@ export function maximizePlayer() {
 					const icon = getFeatureIcon("maximizePlayerButton", "shared_icon_position");
 					if (button && button instanceof HTMLButtonElement) {
 						if (typeof icon === "object" && "off" in icon && "on" in icon) updateFeatureButtonIcon(button, icon.off);
-						updateFeatureButtonTitle("maximizePlayerButton", window.i18nextInstance.t("pages.content.features.maximizePlayerButton.toggle.off"));
+						updateFeatureButtonTitle(
+							"maximizePlayerButton",
+							window.i18nextInstance.t("pages.content.features.maximizePlayerButton.button.toggle.off")
+						);
 					}
 				},
 				"maximizePlayerButton"
