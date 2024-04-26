@@ -1,19 +1,19 @@
-import type { ButtonPlacement, FeaturesThatHaveButtons } from "./types";
+import type { AllButtonNames, ButtonPlacement } from "./types";
 
 import { createSVGElement } from "./utils/utilities";
 export type ToggleIcon = { off: SVGSVGElement; on: SVGSVGElement };
 export type BasicIcon = SVGSVGElement;
 export const toggleFeatures = Object.keys({ loopButton: "", maximizePlayerButton: "", miniPlayer: "", volumeBoostButton: "" } satisfies Partial<
-	Record<FeaturesThatHaveButtons, "">
+	Record<AllButtonNames, "">
 >);
 export type ToggleFeatures = (typeof toggleFeatures)[number];
-export type IconType<T extends FeaturesThatHaveButtons | ToggleFeatures> = T extends ToggleFeatures ? ToggleIcon : BasicIcon;
+export type IconType<T extends AllButtonNames> = T extends ToggleFeatures ? ToggleIcon : BasicIcon;
 export type GetPlacementKey<Placement extends ButtonPlacement> = Placement extends "feature_menu" ? "feature_menu" : "shared_icon_position";
-export type GetIconType<Name extends FeaturesThatHaveButtons, Placement extends ButtonPlacement> = FeatureIconsType[Name][GetPlacementKey<Placement>];
-export type FeatureIconsType = {
-	[Feature in FeaturesThatHaveButtons]: {
+export type GetIconType<Name extends AllButtonNames, Placement extends ButtonPlacement> = FeatureIconMap[Name][GetPlacementKey<Placement>];
+export type FeatureIconMap = {
+	[ButtonName in AllButtonNames]: {
 		feature_menu: BasicIcon;
-		shared_icon_position: IconType<Feature>;
+		shared_icon_position: IconType<ButtonName>;
 	};
 };
 
@@ -195,12 +195,48 @@ const minimizePlayerSVG = createSVGElement(
 		"stroke-width": "1.5"
 	})
 );
+const decreasePlaybackSpeedButtonSVG = createSVGElement(
+	"svg",
+	{
+		height: "24px",
+		stroke: "white",
+		"stroke-width": "1",
+		viewBox: "0 0 24 24",
+		width: "24px"
+	},
+	createSVGElement("path", {
+		d: "M10,8v8l6-4L10,8L10,8z M6.3,5L5.7,4.2C7.2,3,9,2.2,11,2l0.1,1C9.3,3.2,7.7,3.9,6.3,5z M5,6.3L4.2,5.7C3,7.2,2.2,9,2,11 l1,.1C3.2,9.3,3.9,7.7,5,6.3z M5,17.7c-1.1-1.4-1.8-3.1-2-4.8L2,13c0.2,2,1,3.8,2.2,5.4L5,17.7z M11.1,21c-1.8-0.2-3.4-0.9-4.8-2 l-0.6,.8C7.2,21,9,21.8,11,22L11.1,21z M22,12c0-5.2-3.9-9.4-9-10l-0.1,1c4.6,.5,8.1,4.3,8.1,9s-3.5,8.5-8.1,9l0.1,1 C18.2,21.5,22,17.2,22,12z",
+		fill: "white"
+	}),
+	createSVGElement("path", {
+		d: "M16 4.5a.75.75 0 000 1.5h6.5a.75.75 0 000-1.5h-6.5z",
+		fill: "white"
+	})
+);
+const increasePlaybackSpeedButtonSVG = createSVGElement(
+	"svg",
+	{
+		height: "24px",
+		stroke: "white",
+		"stroke-width": "1",
+		viewBox: "0 0 24 24",
+		width: "24px"
+	},
+	createSVGElement("path", {
+		d: "M10,8v8l6-4L10,8L10,8z M6.3,5L5.7,4.2C7.2,3,9,2.2,11,2l0.1,1C9.3,3.2,7.7,3.9,6.3,5z M5,6.3L4.2,5.7C3,7.2,2.2,9,2,11 l1,.1C3.2,9.3,3.9,7.7,5,6.3z M5,17.7c-1.1-1.4-1.8-3.1-2-4.8L2,13c0.2,2,1,3.8,2.2,5.4L5,17.7z M11.1,21c-1.8-0.2-3.4-0.9-4.8-2 l-0.6,.8C7.2,21,9,21.8,11,22L11.1,21z M22,12c0-5.2-3.9-9.4-9-10l-0.1,1c4.6,.5,8.1,4.3,8.1,9s-3.5,8.5-8.1,9l0.1,1 C18.2,21.5,22,17.2,22,12z",
+		fill: "white"
+	}),
+	createSVGElement("path", {
+		d: "M20 2a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z",
+		fill: "white"
+	})
+);
 const miniPlayerOffSVG = createSVGElement(
 	"svg",
 	{
 		fill: "none",
 		height: "24px",
-		stroke: "currentColor",
+		stroke: "white",
 		"stroke-width": 0,
 		viewBox: "0 0 24 24",
 		width: "24px"
@@ -208,11 +244,19 @@ const miniPlayerOffSVG = createSVGElement(
 	createSVGElement("path", {
 		"clip-rule": "evenodd",
 		d: "M3 6C3 4.34315 4.34315 3 6 3H18C19.6569 3 21 4.34315 21 6V18C21 19.6569 19.6569 21 18 21H6C4.34315 21 3 19.6569 3 18V6ZM6 5H18C18.5523 5 19 5.44772 19 6V12.2676C18.7058 12.0974 18.3643 12 18 12H14C12.8954 12 12 12.8954 12 14V18C12 18.3643 12.0974 18.7058 12.2676 19H6C5.44772 19 5 18.5523 5 18V6C5 5.44772 5.44772 5 6 5Z",
-		fill: "currentColor",
+		fill: "white",
 		"fill-rule": "evenodd"
 	})
 );
 export const featureIcons = {
+	decreasePlaybackSpeedButton: {
+		feature_menu: decreasePlaybackSpeedButtonSVG,
+		shared_icon_position: decreasePlaybackSpeedButtonSVG
+	},
+	increasePlaybackSpeedButton: {
+		feature_menu: increasePlaybackSpeedButtonSVG,
+		shared_icon_position: increasePlaybackSpeedButtonSVG
+	},
 	loopButton: {
 		feature_menu: loopOnSVG,
 		shared_icon_position: {
@@ -249,8 +293,8 @@ export const featureIcons = {
 			on: volumeBoostOnSVG
 		}
 	}
-} satisfies FeatureIconsType;
-export function getFeatureIcon<Name extends FeaturesThatHaveButtons, Placement extends ButtonPlacement>(
+} satisfies FeatureIconMap;
+export function getFeatureIcon<Name extends AllButtonNames, Placement extends ButtonPlacement>(
 	featureName: Name,
 	placement: GetPlacementKey<Placement>
 ) {

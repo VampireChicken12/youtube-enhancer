@@ -25,8 +25,8 @@ export const addMiniPlayerButton: AddButtonFunction = async () => {
 		"miniPlayer",
 		miniPlayerButtonPlacement,
 		miniPlayerButtonPlacement === "feature_menu" ?
-			window.i18nextInstance.t("pages.content.features.miniPlayer.label")
-		:	window.i18nextInstance.t("pages.content.features.miniPlayer.toggle.off"),
+			window.i18nextInstance.t("pages.content.features.miniPlayer.button.label")
+		:	window.i18nextInstance.t("pages.content.features.miniPlayer.button.toggle.off"),
 		getFeatureIcon("miniPlayer", miniPlayerButtonPlacement !== "feature_menu" ? "shared_icon_position" : "feature_menu"),
 		(checked) => {
 			if (checked === undefined) return;

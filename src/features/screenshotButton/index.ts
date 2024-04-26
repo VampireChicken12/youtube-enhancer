@@ -29,10 +29,6 @@ async function takeScreenshot(videoElement: HTMLVideoElement) {
 				options: { screenshot_format, screenshot_save_as }
 			}
 		} = optionsData;
-		const format = `image/${screenshot_format}`;
-
-		// Get the data URL of the canvas and create a blob from it
-		const dataUrl = canvas.toDataURL(format);
 		const blob = await new Promise<Nullable<Blob>>((resolve) => canvas.toBlob(resolve, "image/png"));
 		if (!blob) return;
 
@@ -45,12 +41,11 @@ async function takeScreenshot(videoElement: HTMLVideoElement) {
 					element: screenshotButton,
 					featureName: "screenshotButton",
 					id: "yte-feature-screenshotButton-tooltip",
-					text: window.i18nextInstance.t("pages.content.buttons.screenshotButton.copiedToClipboard")
+					text: window.i18nextInstance.t("pages.content.features.screenshotButton.copiedToClipboard")
 				});
 				listener();
 				const clipboardImage = new ClipboardItem({ "image/png": blob });
 				void navigator.clipboard.write([clipboardImage]);
-				void navigator.clipboard.writeText(dataUrl);
 				setTimeout(() => {
 					remove();
 				}, 1200);
@@ -100,7 +95,7 @@ export const addScreenshotButton: AddButtonFunction = async () => {
 	await addFeatureButton(
 		"screenshotButton",
 		screenshotButtonPlacement,
-		window.i18nextInstance.t("pages.content.buttons.screenshotButton.label"),
+		window.i18nextInstance.t("pages.content.features.screenshotButton.button.label"),
 		getFeatureIcon("screenshotButton", screenshotButtonPlacement !== "feature_menu" ? "shared_icon_position" : "feature_menu"),
 		screenshotButtonClickListener,
 		false
