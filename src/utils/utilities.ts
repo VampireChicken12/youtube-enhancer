@@ -18,6 +18,7 @@ import type {
 	Selector,
 	SendDataMessage,
 	SingleButtonFeatureNames,
+	SingleButtonNames,
 	YoutubePlayerQualityLevel
 } from "../types";
 import type { SVGElementAttributes } from "./SVGElementAttributes";
@@ -467,7 +468,7 @@ export function createTooltip({
 	direction?: "down" | "left" | "right" | "up";
 	element: HTMLElement;
 	featureName: FeatureName;
-	id: `yte-feature-${FeatureName}-tooltip`;
+	id: `yte-feature-${AllButtonNames | Exclude<FeatureName, SingleButtonNames>}-tooltip`;
 	text?: string;
 }): {
 	listener: () => void;
@@ -655,12 +656,10 @@ export function getPathValue<T, P extends Path<T>>(obj: T, path: P): PathValue<T
 	return value as PathValue<T, P>;
 }
 export type ModifyElementAction = "add" | "remove";
-export type ElementClassPair = { className: string; selector: string };
+export type ElementClassPair = { className: string; element: Nullable<Element> };
 export function modifyElementClassList(action: ModifyElementAction, elementPair: ElementClassPair) {
-	const { className, selector } = elementPair;
-	const element = document.querySelector<HTMLElement>(selector);
-	if (!element) return;
-	element.classList[action](className);
+	const { className, element } = elementPair;
+	element?.classList[action](className);
 }
 export function modifyElementsClassList(action: ModifyElementAction, elements: ElementClassPair[]) {
 	elements.forEach((element) => modifyElementClassList(action, element));

@@ -275,6 +275,11 @@ const storageChangeHandler = async (changes: StorageChanges, areaName: string) =
 				playerSpeed: options.player_speed
 			});
 		},
+		enable_hide_live_stream_chat: (__oldValue, newValue) => {
+			sendExtensionOnlyMessage("hideLiveStreamChatChange", {
+				hideLiveStreamChatEnabled: newValue
+			});
+		},
 		enable_hide_scrollbar: (__oldValue, newValue) => {
 			sendExtensionOnlyMessage("hideScrollBarChange", {
 				hideScrollBarEnabled: newValue
@@ -283,6 +288,11 @@ const storageChangeHandler = async (changes: StorageChanges, areaName: string) =
 		enable_hide_shorts: (__oldValue, newValue) => {
 			sendExtensionOnlyMessage("hideShortsChange", {
 				hideShortsEnabled: newValue
+			});
+		},
+		enable_hide_translate_comment: (__oldValue, newValue) => {
+			sendExtensionOnlyMessage("hideTranslateCommentChange", {
+				hideTranslateCommentEnabled: newValue
 			});
 		},
 		enable_loop_button: (__oldValue, newValue) => {
